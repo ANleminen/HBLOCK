@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "c8 --reporter=lcov mocha"
+    "test": "c8 --reporter=lcov --reporter=text mocha"
   },
   "author": "",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "c8": "^8.0.1",
     "chai": "^4.3.10",
     "mocha": "^10.2.0",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "nyc": "^15.1.0"
   }
 }
