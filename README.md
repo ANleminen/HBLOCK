@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/ANleminen/HBLOCK/badge.svg?branch=main)](https://coveralls.io/github/ANleminen/HBLOCK?branch=main)
+
 # Student template
 
 ## Purpose of this repository
