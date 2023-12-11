@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "test:coverage": "nyc npm test"
+    "test:coverage": "nyc mocha"
   },
   "author": "",
   "license": "MIT",
