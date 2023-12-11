@@ -22,7 +22,7 @@ jobs:
       run: npm install
 
     - name: Run Tests with Coverage
-      run: npm run test:coverage
+      run: npx nyc npm test
 
     - name: Upload to Coveralls
       run: npx coveralls
