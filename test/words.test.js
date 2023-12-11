@@ -25,4 +25,15 @@ describe('words', () => {
         const result = words('   ');
         expect(result).to.deep.equal([]);
     });
+
+    it('should split a string with non-ascii characters into an array of words', () => {
+        const result = words('我爱你');
+        expect(result).to.deep.equal(['我', '爱', '你']);
+    });
+
+    it('should split a string with non-ascii characters into an array of words using a custom pattern', () => {
+        const result = words('我爱你', /[^ ]+/g);
+        expect(result).to.deep.equal(['我', '爱', '你']);
+    });
+
 });
