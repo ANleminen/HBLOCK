@@ -21,9 +21,10 @@ jobs:
         node-version: 16.x
 
     - name: npm install
-      run: |
-        npm install
-        npm test
+      run: npm install
+
+    - name: npm test
+      run: npm test
 
     - name: Coveralls
       uses: coverallsapp/github-action@v2
