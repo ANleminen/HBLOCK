@@ -17,11 +17,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
-      with:
-        node-version: '16.16.0'
-    - run: npm ci
-    - run: npm run test-coverage
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Tests with Coverage
+      run: npm run test:coverage
+
+    - name: Upload to Coveralls
+      run: npx coveralls
+      env:
+        CI: true
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
