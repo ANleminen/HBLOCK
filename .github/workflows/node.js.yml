@@ -22,7 +22,12 @@ jobs:
 
     - name: npm install
       run: npm install
-
+      
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    
+    steps:
     - name: npm test
       run: npm test
 
