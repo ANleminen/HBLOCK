@@ -1,3 +1,0 @@
-"scripts": {
-    "test": "mocha --recursive --require @babel/register",
-    "test-coverage": "nyc npm test && nyc report --reporter=text-lcov"}
