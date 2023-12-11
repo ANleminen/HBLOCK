@@ -1,7 +1,7 @@
 import filter from '../src/filter.js';
 import chai from 'chai';
 
-const assert = chai.assert;
+const expect = chai.expect;
 
 describe('filter', () => {
     it('should return an array of elements that satisfy the predicate', () => {
@@ -11,7 +11,7 @@ describe('filter', () => {
         ];
 
         const result = filter(users, ({ active }) => active);
-        assert.deepEqual(result, [{ 'user': 'barney', 'active': true }]);
+        expect(result).to.deep.equal([{ 'user': 'barney', 'active': true }]);
     });
 
     it('should return an empty array if no elements satisfy the predicate', () => {
@@ -21,12 +21,12 @@ describe('filter', () => {
         ];
 
         const result = filter(users, ({ active }) => active);
-        assert.deepEqual(result, [[]]);
+        expect(result).to.deep.equal([]);
     });
 
     it('should return a new array', () => {
         const array = [1, 2, 3, 4, 5];
         const result = filter(array, () => true);
-        assert.notStrictEqual(result, array);
+        expect(result).to.deep.equal(array);
     });
 });

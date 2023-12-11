@@ -1,7 +1,7 @@
 import countBy from '../src/countBy.js';
 import chai from 'chai';
 
-const assert = chai.assert;
+const expect = chai.expect;
 
 describe('countBy', () => {
     it('should return an object with the count of each key returned by the iteratee', () => {
@@ -12,18 +12,18 @@ describe('countBy', () => {
         ];
 
         const result = countBy(users, value => value.active);
-        assert.deepEqual(result, { 'true': 2, 'false': 1 });
+        expect(result).to.deep.equal({ 'true': 2, 'false': 1 });
     });
 
     it('should return an empty object if the collection is empty', () => {
         const collection = [];
         const result = countBy(collection, value => value);
-        assert.deepEqual(result, {});
+        expect(result).to.deep.equal({});
     });
 
     it('should return an object with the count of each key returned by the iteratee function', () => {
         const collection = [1, 2, 3, 4, 5];
         const result = countBy(collection, value => value % 2 === 0 ? 'even' : 'odd');
-        assert.deepEqual(result, { 'odd': 3, 'even': 2 });
+        expect(result).to.deep.equal({ 'odd': 3, 'even': 2 });
     });
 });
